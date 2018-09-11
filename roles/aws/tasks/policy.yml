@@ -1,0 +1,23 @@
+---
+
+- name: Generate path to ECR RO policy document
+  set_fact:
+    policy_json_path: "{{ role_path }}/files/ecr_ro.json"
+
+- name: Assign ECR RO to the role
+  iam_policy:
+    iam_type: role
+    iam_name: "{{ all_resources_names[app_name]['aws_role_name'] }}"
+    policy_name: "{{ all_resources_names[app_name]['policy_name'] }}"
+    state: present
+    policy_document: "{{policy_json_path }}"
+    region: "{{ default_region }}"
+
+- name: Assign ECR RO to the group
+  iam_policy:
+    iam_type: group
+    iam_name: "{{ all_resources_names[app_name]['aws_group_name'] }}"
+    policy_name: "{{ all_resources_names[app_name]['policy_name'] }}"
+    state: present
+    policy_document: "{{policy_json_path }}"
+    region: "{{ default_region }}"

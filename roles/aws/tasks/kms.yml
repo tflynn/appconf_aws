@@ -1,0 +1,10 @@
+---
+
+- name: Create KMS key
+  aws_kms:
+  args:
+    key_alias: "alias/{{ all_resources_names[app_name]['key_alias'] }}"
+    mode: grant
+    role_name: "{{ all_resources_names[app_name]['aws_group_name'] }}"
+    grant_types: "role,role grant"
+    region: "{{ default_region }}"

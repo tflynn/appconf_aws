@@ -1,0 +1,46 @@
+---
+
+- name: Create S3 bucket ARN
+  set_fact:
+    s3_bucket_arn: "arn:aws:s3:::{{s3_secrets_bucket}}"
+
+- name: Generate s3 key
+  set_fact:
+    s3_key: "{{ app_name }}-{{ app_env }}-{{ app_ver }}.encryptedsecrets.json"
+
+- name: Generate key s3 ARN
+  set_fact:
+    s3_key_arn: "{{s3_bucket_arn}}/{{ s3_key }}"
+
+
+
+- name: Generate policy, role, group names, repo and key names
+  set_fact:
+    policy_name: "{{ app_env }}-{{ app_name }}-{{ app_ver }}"
+    aws_role_name: "{{ app_env }}-{{ app_name }}-{{ app_ver }}"
+    aws_group_name: "{{ app_env }}-{{ app_name }}-{{ app_ver }}"
+    ecr_repo_name: "{{ repo_prefix }}/{{ app_name }}_{{ app_ver }}"
+    key_alias_name: "{{ app_env }}_{{ app_name }}_{{ app_ver }}"
+
+- name: Generate ECR repo ARN
+  set_fact:
+    ecr_repo_arn: "arn:aws:ecr:{{default_region}}:{{default_aws_account_id}}/repository/{{ecr_repo_name}}"
+
+- name: Collect names for a single app
+  set_fact:
+    application_resource_names: "{{ application_resource_names | default({}) | combine({item.key: item.value}) }}"
+  with_items: 
+    - { key: "s3_key", value: "{{ s3_key }}" }
+    - { key: "s3_key_arn", value: "{{ s3_key_arn }}" }
+    - { key: "policy_name", value: "{{ policy_name }}"}
+    - { key: "aws_role_name", value: "{{ aws_role_name }}"}
+    - { key: "aws_group_name", value: "{{ aws_group_name }}"}
+    - { key: "ecr_repo_name", value: "{{ ecr_repo_name }}"}
+    - { key: "ecr_repo_arn", value: "{{ ecr_repo_arn }}"}
+    - { key: "key_alias", value: "{{ key_alias_name }}"}
+
+- name: Collect all names for all apps
+  set_fact:
+    all_resources_names: "{{ all_resources_names | default({}) | combine({item.key: item.value}) }}"
+  with_items:
+    - {key: "{{ app_name }}", value: "{{ application_resource_names }}" }

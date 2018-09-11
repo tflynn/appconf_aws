@@ -1,0 +1,7 @@
+---
+
+- name: Create S3 bucket
+  aws_s3:
+    bucket: "{{ s3_secrets_bucket }}"
+    mode: create
+    region: "{{ default_region }}"

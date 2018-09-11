@@ -1,0 +1,11 @@
+---
+
+- name: Generate path to assume role policy document
+  set_fact:
+    policy_json_path: "{{ role_path }}/files/policy.json"
+
+#- name: Create group
+- iam_group:
+    name: "{{ all_resources_names[app_name]['aws_role_name'] }}"
+    region: "{{ default_region }}"
+    state: present
