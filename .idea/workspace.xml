@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1adcf9af-83a4-46b2-9949-db7786f210e5" name="Default Changelist" comment="" />
+    <list default="true" id="1adcf9af-83a4-46b2-9949-db7786f210e5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/library/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +118,9 @@
       <find>marker</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -138,6 +144,7 @@
     <option name="width" value="1883" />
     <option name="height" value="998" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -214,7 +221,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2451" y="108" width="1883" height="998" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25286728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -260,16 +266,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/timetest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-          <folding>
-            <element signature="e#114#129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/library/timetest.py" />
     <entry file="file://$PROJECT_DIR$/library/github_repo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -294,6 +291,16 @@
             <marker date="1536694465341" expanded="true" signature="3538:3541" ph="..." />
             <marker date="1536694465341" expanded="true" signature="6491:8143" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" selection-start-line="3" selection-end-line="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
