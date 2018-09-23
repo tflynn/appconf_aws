@@ -1,60 +1,53 @@
 ---
-- hosts: 127.0.0.1
+- hosts: localhost
   connection: local
   vars:
     all_resources_names: {}
     app_names:
       - "app1"
-      - "app2"
-      - "app3"
-      - "app4"
+#    app_names:
+#      - "app1"
+#      - "app2"
+#      - "app3"
+#      - "app4"
     app_env: "dev"
-    app_ver: "1.1"
+    app_ver: "1_1"
     s3_secrets_bucket: "749a7d5a-94bf-460e-ba0c-2391a2cd6812"
     repo_prefix: "mysite"
     default_region: "us-east-1"
     default_aws_account_id: "097064421904"
-    test_policy:
-      Version: "2012-10-17"
-      Statement:
-        - Effect: "Allow"
-          Action:
-            - "ecr:GetAuthorizationToken"
-          "Resource": "*"
 
   tasks:
 
-   - name: Test policy creation
-     aws_iam_policy_lite:
-       state: present
-       policy_name: "test_policy_1"
-       policy_document: "{{ test_policy | to_nice_json }}"
-     register: result
+    - name: Generate resource names
+      include_role:
+        name: naming
+        tasks_from: naming
+      loop: "{{ app_names }}"
+      loop_control:
+        loop_var: app_name
 
-   - debug:
-       var: result
+    - name: Generate S3 Bucket
+      include_role:
+        name: aws
+        tasks_from: s3
 
-#    - name: Module test
-#      github_repo:
-#      register: result
-#
-#    - debug:
-#        var: result
+    - name: Generate ECR Repos
+      include_role:
+        name: aws
+        tasks_from: ecr
+      loop: "{{ app_names }}"
+      loop_control:
+        loop_var: app_name
 
+    - name: Generate policies
+      include_role:
+        name: aws_lite
+        tasks_from: policy
+      loop: "{{ app_names }}"
+      loop_control:
+        loop_var: app_name
 
-#    - name: Generate resource names
-#      include_role:
-#        name: naming
-#        tasks_from: naming
-#      loop: "{{ app_names }}"
-#      loop_control:
-#        loop_var: app_name
-#
-#    - name: Generate S3 Bucket
-#      include_role:
-#        name: aws
-#        tasks_from: s3
-#
 #    - name: Generate role
 #      include_role:
 #        name: aws
@@ -80,12 +73,15 @@
 #        loop_var: app_name
 #
 #
-#    # - name: Generate KMS Key
-#    #   include_role:
-#    #     name: aws
-#    #     tasks_from: kms
-#    #   loop: "{{ app_names }}"
-#    #   loop_control:
-#    #     loop_var: app_name
-#
-#
+
+
+#      - name: Generate KMS Key
+#        include_role:
+#          name: aws
+#          tasks_from: kms
+#        loop: "{{ app_names }}"
+#        loop_control:
+#          loop_var: app_name
+
+
+

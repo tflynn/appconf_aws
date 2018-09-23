@@ -6,6 +6,6 @@
 
 #- name: Create group
 - iam_group:
-    name: "{{ all_resources_names[app_name]['aws_role_name'] }}"
+    name: "{{ all_resources_names[app_name]['role_name'] }}"
     region: "{{ default_region }}"
     state: present

@@ -6,7 +6,7 @@
 
 - name: Create role
   iam_role:
-    name: "{{ all_resources_names[app_name]['aws_role_name'] }}"
+    name: "{{ all_resources_names[app_name]['role_name'] }}"
     assume_role_policy_document: "{{ lookup('file',policy_json_path) }}"
-    description: "{{ all_resources_names[app_name]['aws_role_name'] }}"
+    description: "{{ all_resources_names[app_name]['role_name'] }}"
     region: "{{ default_region }}"

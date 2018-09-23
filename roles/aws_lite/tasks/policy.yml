@@ -1,0 +1,18 @@
+---
+
+- name: Generate variables for policies
+  set_fact:
+    ecr_repo_arn: "{{ all_resources_names[app_name]['ecr_repo_arn']}}"
+
+- name: Generate Policies
+  set_fact:
+    ecr_auth_policy: "{{ lookup('template', 'ecr_auth_all.json.j2') }}"
+    ecr_ro_policy: "{{ lookup('template', 'ecr_ro.json.j2') }}"
+    ecr_ro_test_policy: "{{ lookup('template', 'ecr_ro_test.json.j2') }}"
+
+- name: Create ECR RO policy
+  aws_iam_policy_plugin:
+    state: present
+    policy_name: "{{ all_resources_names[app_name]['policy_name_ecr_ro'] }}"
+    policy_document: "{{ ecr_ro_policy | to_nice_json }}"
+  register: result

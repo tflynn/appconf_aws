@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/appconf.iml" filepath="$PROJECT_DIR$/.idea/appconf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/appconf_aws.iml" filepath="$PROJECT_DIR$/.idea/appconf_aws.iml" />
     </modules>
   </component>
 </project>

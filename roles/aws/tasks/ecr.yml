@@ -1,0 +1,6 @@
+---
+
+- name: Create ECR repos
+  ecs_ecr:
+    name: "{{ all_resources_names[app_name]['ecr_repo_name'] }}"
+    region: "{{ default_region }}"
