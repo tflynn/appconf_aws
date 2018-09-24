@@ -16,8 +16,8 @@
   set_fact:
     policy_name: "{{ app_env }}-{{ app_name }}-{{ app_ver }}"
     policy_name_ecr_ro: "{{ app_env }}-{{ app_name }}-{{ app_ver }}-ecr-ro"
-    role_name: "{{ app_env }}-{{ app_name }}-{{ app_ver }}"
-    group_name: "{{ app_env }}-{{ app_name }}-{{ app_ver }}"
+    iam_role_name: "{{ app_env }}-{{ app_name }}-{{ app_ver }}"
+    iam_group_name: "{{ app_env }}-{{ app_name }}-{{ app_ver }}"
     ecr_repo_name: "{{ repo_prefix }}/{{ app_name }}_{{ app_ver }}"
     key_alias_name: "{{ app_env }}_{{ app_name }}_{{ app_ver }}"
 
@@ -33,8 +33,8 @@
     - { key: "s3_key_arn", value: "{{ s3_key_arn }}" }
     - { key: "policy_name", value: "{{ policy_name }}"}
     - { key: "policy_name_ecr_ro", value: "{{ policy_name_ecr_ro }}"}
-    - { key: "role_name", value: "{{ role_name }}"}
-    - { key: "group_name", value: "{{ group_name }}"}
+    - { key: "iam_role_name", value: "{{ iam_role_name }}"}
+    - { key: "iam_group_name", value: "{{ iam_group_name }}"}
     - { key: "ecr_repo_name", value: "{{ ecr_repo_name }}"}
     - { key: "ecr_repo_arn", value: "{{ ecr_repo_arn }}"}
     - { key: "key_alias", value: "{{ key_alias_name }}"}

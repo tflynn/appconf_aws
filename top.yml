@@ -48,40 +48,19 @@
       loop_control:
         loop_var: app_name
 
-#    - name: Generate role
-#      include_role:
-#        name: aws
-#        tasks_from: role
-#      loop: "{{ app_names }}"
-#      loop_control:
-#        loop_var: app_name
-#
-#    - name: Generate group`
-#      include_role:
-#        name: aws
-#        tasks_from: group
-#      loop: "{{ app_names }}"
-#      loop_control:
-#        loop_var: app_name
-#
-#    - name: Generate policy
-#      include_role:
-#        name: aws
-#        tasks_from: policy
-#      loop: "{{ app_names }}"
-#      loop_control:
-#        loop_var: app_name
-#
-#
+    - name: Generate role
+      include_role:
+        name: aws
+        tasks_from: role
+      loop: "{{ app_names }}"
+      loop_control:
+        loop_var: app_name
 
-
-#      - name: Generate KMS Key
-#        include_role:
-#          name: aws
-#          tasks_from: kms
-#        loop: "{{ app_names }}"
-#        loop_control:
-#          loop_var: app_name
-
-
+    - name: Generate group
+      include_role:
+        name: aws
+        tasks_from: group
+      loop: "{{ app_names }}"
+      loop_control:
+        loop_var: app_name
 

@@ -1,12 +1,26 @@
 ---
 
-- name: Generate path to assume role policy document
+- name: Generate Assume Role Policy
   set_fact:
-    policy_json_path: "{{ role_path }}/files/policy.json"
+    iam_assume_role_policy: "{{ lookup('template', 'iam_assume_role.json.j2') }}"
 
 - name: Create role
   iam_role:
-    name: "{{ all_resources_names[app_name]['role_name'] }}"
-    assume_role_policy_document: "{{ lookup('file',policy_json_path) }}"
-    description: "{{ all_resources_names[app_name]['role_name'] }}"
+    name: "{{ all_resources_names[app_name]['iam_role_name'] }}"
+    assume_role_policy_document: "{{ iam_assume_role_policy | to_nice_json }}"
+    description: "{{ all_resources_names[app_name]['iam_role_name'] }}"
     region: "{{ default_region }}"
+    managed_policy: ["{{ application_resource_names['ecr_ro_policy']['Arn']}}"]
+  register: result
+
+- name: Save off role  information for this application
+  set_fact:
+    application_resource_names: "{{ application_resource_names | default({}) | combine({item.key: item.value}) }}"
+  with_items:
+    - { key: "role", value: "{{ result['iam_role'] }}" }
+
+- name: Update global information for all resources
+  set_fact:
+    all_resources_names: "{{ all_resources_names | default({}) | combine({item.key: item.value}) }}"
+  with_items:
+    - {key: "{{ app_name }}", value: "{{ application_resource_names }}" }

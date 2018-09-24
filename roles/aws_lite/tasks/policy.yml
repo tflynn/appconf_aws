@@ -16,3 +16,16 @@
     policy_name: "{{ all_resources_names[app_name]['policy_name_ecr_ro'] }}"
     policy_document: "{{ ecr_ro_policy | to_nice_json }}"
   register: result
+
+- name: Save off ECR RO policy information for this application
+  set_fact:
+    application_resource_names: "{{ application_resource_names | default({}) | combine({item.key: item.value}) }}"
+  with_items:
+    - { key: "ecr_ro_policy", value: "{{ result['policy'] }}" }
+
+- name: Update global information for all resources
+  set_fact:
+    all_resources_names: "{{ all_resources_names | default({}) | combine({item.key: item.value}) }}"
+  with_items:
+    - {key: "{{ app_name }}", value: "{{ application_resource_names }}" }
+
