@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc54efe3-ccc3-4b59-a950-5d125732ee6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/roles/aws/templates/iam_assume_role.json.j2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/aws/tasks/group.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/aws/tasks/group.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/aws/tasks/role.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/aws/tasks/role.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/naming/tasks/naming.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/naming/tasks/naming.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/top.yml" beforeDir="false" afterPath="$PROJECT_DIR$/top.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
