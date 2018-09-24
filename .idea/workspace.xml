@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc54efe3-ccc3-4b59-a950-5d125732ee6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ansible.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/aws/tasks/ecr.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/aws_lite/templates/ecr_auth_all.json.j2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/aws_lite/templates/ecr_ro.json.j2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/aws_lite/templates/ecr_ro_test.json.j2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/appconf.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tracy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/aws_iam_policy_lite.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/aws_iam_policy_plugin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/aws/tasks/group.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/aws/tasks/group.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/aws/tasks/role.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/aws/tasks/role.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/naming/tasks/naming.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/naming/tasks/naming.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/top.yml" beforeDir="false" afterPath="$PROJECT_DIR$/top.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/aws_iam_policy_plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/aws_lite_iam_policy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +23,7 @@
         <counts>
           <entry key="j2" value="2" />
           <entry key="md" value="1" />
-          <entry key="py" value="2" />
+          <entry key="py" value="3" />
           <entry key="yml" value="2" />
         </counts>
       </usages-collector>
@@ -45,12 +31,13 @@
         <counts>
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="2" />
+          <entry key="Python" value="3" />
           <entry key="YAML_EX" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="dummy" value="5" />
           <entry key="md" value="111" />
           <entry key="py" value="232" />
           <entry key="yml" value="48" />
@@ -59,6 +46,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="111" />
+          <entry key="PLAIN_TEXT" value="5" />
           <entry key="Python" value="232" />
           <entry key="YAML_EX" value="48" />
         </counts>
@@ -69,11 +57,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/library/aws_iam_policy_plugin.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/aws_lite_iam_policy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="1377">
+              <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
               <folding>
                 <element signature="e#220#260#0" expanded="true" />
               </folding>
@@ -93,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
@@ -137,6 +125,7 @@
         <option value="$PROJECT_DIR$/roles/aws_lite/tasks/policy_lite.yml" />
         <option value="$PROJECT_DIR$/top.yml" />
         <option value="$PROJECT_DIR$/library/aws_iam_policy_plugin.py" />
+        <option value="$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml" />
       </list>
     </option>
   </component>
@@ -232,7 +221,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/library/aws_iam_policy_plugin.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/library/aws_lite_iam_policy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -336,13 +325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -353,13 +335,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/aws_iam_policy_plugin.py">
+    <entry file="file:///usr/local/lib/python3.7/site-packages/aws_idem/iam/policy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="673">
+          <caret line="108" column="23" lean-forward="true" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/aws_lite_iam_policy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
           <folding>
             <element signature="e#220#260#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/aws_lite/tasks/policy.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>

@@ -11,7 +11,7 @@
     ecr_ro_test_policy: "{{ lookup('template', 'ecr_ro_test.json.j2') }}"
 
 - name: Create ECR RO policy
-  aws_iam_policy_plugin:
+  aws_lite_iam_policy:
     state: present
     policy_name: "{{ all_resources_names[app_name]['policy_name_ecr_ro'] }}"
     policy_document: "{{ ecr_ro_policy | to_nice_json }}"
