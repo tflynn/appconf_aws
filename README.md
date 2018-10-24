@@ -1,4 +1,4 @@
-# appconf_aws
+# appconf_aws_ansible
 
 Ansible and AWS - sample application configuration with some AWS resources and custom Ansible plugin
 
